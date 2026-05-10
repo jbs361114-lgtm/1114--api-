@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>한국 단기예보 | 1114 이상건</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="student-info">
+        <span class="student-id">학번 1114</span>
+        <span class="divider">|</span>
+        <span class="student-name">이상건</span>
+      </div>
+      <h1 class="site-title">🌤 한국 단기예보</h1>
+      <p class="site-subtitle">기상청 단기예보 조회서비스</p>
+    </div>
+  </header>
+
+  <!-- 검색 섹션 -->
+  <main class="main-content">
+    <section class="search-section">
+      <div class="search-card">
+        <h2 class="section-title">지역 선택</h2>
+        <div class="controls">
+          <div class="select-group">
+            <label for="region-select">📍 지역</label>
+            <select id="region-select">
+              <option value="60,127">서울</option>
+              <option value="55,124">인천</option>
+              <option value="89,90">대전</option>
+              <option value="102,84">대구</option>
+              <option value="98,76">부산</option>
+              <option value="58,74">광주</option>
+              <option value="67,100">수원</option>
+              <option value="73,134">춘천</option>
+              <option value="92,131">강릉</option>
+              <option value="69,107">이천</option>
+            </select>
+          </div>
+          <button id="fetch-btn" class="fetch-btn">
+            <span class="btn-text">예보 조회</span>
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 현재 날씨 요약 -->
+    <section class="summary-section" id="summary-section" style="display:none">
+      <div class="summary-card">
+        <div class="summary-icon" id="summary-icon">🌤</div>
+        <div class="summary-info">
+          <div class="summary-region" id="summary-region">서울</div>
+          <div class="summary-temp" id="summary-temp">--°C</div>
+          <div class="summary-desc" id="summary-desc">--</div>
+        </div>
+        <div class="summary-details">
+          <div class="detail-item">
+            <span class="detail-label">습도</span>
+            <span class="detail-value" id="detail-humidity">--%</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">풍속</span>
+            <span class="detail-value" id="detail-wind">-- m/s</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">강수확률</span>
+            <span class="detail-value" id="detail-rain">--%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 시간별 예보 -->
+    <section class="forecast-section" id="forecast-section" style="display:none">
+      <h2 class="section-title">시간별 예보</h2>
+      <div class="forecast-grid" id="forecast-grid"></div>
+    </section>
+
+    <!-- 로딩 / 에러 -->
+    <div class="loading" id="loading" style="display:none">
+      <div class="spinner"></div>
+      <p>예보 데이터를 불러오는 중...</p>
+    </div>
+    <div class="error-msg" id="error-msg" style="display:none"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>데이터 출처: 기상청 단기예보 조회서비스 &nbsp;|&nbsp; 학번 1114 이상건</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
